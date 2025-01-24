@@ -9,6 +9,7 @@ import Skills from "./Skills"
 import Portfolio from "./Portfolio"
 import SocialLinks from "./SocialLinks"
 import EditModal from "./EditModal"
+import InteractiveTimeline from "./InteractiveTimeline"
 
 export default function Resume() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -112,10 +113,7 @@ export default function Resume() {
           phone={personalInfo.phone}
           onEdit={() => handleEdit("personal")} 
         />
-        <Experience 
-          experiences={experiences}
-          onEdit={() => handleEdit("experience")} 
-        />
+        <InteractiveTimeline items={experiences} />
         <Education 
           education={education}
           onEdit={() => handleEdit("education")} 
