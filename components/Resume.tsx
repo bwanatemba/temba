@@ -10,6 +10,7 @@ import Portfolio from "./Portfolio"
 import SocialLinks from "./SocialLinks"
 import EditModal from "./EditModal"
 import InteractiveTimeline from "./InteractiveTimeline"
+import AnimatedSkillBars from "./AnimatedSkillBars"
 
 export default function Resume() {
   const [personalInfo, setPersonalInfo] = useState({
@@ -122,6 +123,7 @@ export default function Resume() {
           skills={skills}
           onEdit={() => handleEdit("skills")} 
         />
+        <AnimatedSkillBars skills={skills} />
         <Portfolio />
         <SocialLinks />
 
