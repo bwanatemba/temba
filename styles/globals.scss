@@ -1,0 +1,75 @@
+// ... (previous styles)
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #007bff;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: #007bff;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+
+      h4, h5, h6 {
+        margin: 0;
+      }
+
+      p {
+        margin-top: 10px;
+        display: none;
+      }
+    }
+
+    &.active {
+      .timeline-content {
+        background-color: #e9ecef;
+        transform: scale(1.05);
+
+        p {
+          display: block;
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      .timeline-content {
+        margin-right: 50px;
+      }
+    }
+
+    &:nth-child(even) {
+      .timeline-content {
+        margin-left: 50px;
+      }
+    }
+  }
+}
+

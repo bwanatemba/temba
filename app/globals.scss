@@ -1,0 +1,158 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #333;
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 0.5em 1em;
+  margin: 0.2em;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.social-links {
+  a {
+    color: #333;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+}
+
+// Add some animation for the portfolio tabs
+.nav-tabs {
+  .nav-link {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #007bff;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &.active::after,
+    &:hover::after {
+      transform: translateX(0);
+    }
+  }
+}
+
+// Add a subtle animation for the download button
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-primary {
+  animation: pulse 2s infinite;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #007bff;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: #007bff;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
+
+      h4, h5, h6 {
+        margin: 0;
+      }
+
+      p {
+        margin-top: 10px;
+        display: none;
+      }
+    }
+
+    &.active {
+      .timeline-content {
+        background-color: #e9ecef;
+        transform: scale(1.05);
+
+        p {
+          display: block;
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      .timeline-content {
+        margin-right: 50px;
+      }
+    }
+
+    &:nth-child(even) {
+      .timeline-content {
+        margin-left: 50px;
+      }
+    }
+  }
+}
+
