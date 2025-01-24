@@ -1,21 +1,14 @@
-import AnimatedSkillBars from "./AnimatedSkillBars"
+interface Skill {
+  name: string
+  level: number
+}
 
 interface SkillsProps {
+  skills: Skill[]
   onEdit: () => void
 }
 
-export default function Skills({ onEdit }: SkillsProps) {
-  const skills = [
-    { name: "Graphic Design", level: 90 },
-    { name: "Video Editing", level: 85 },
-    { name: "Web Development", level: 80 },
-    { name: "UI/UX Design", level: 75 },
-    { name: "Adobe Creative Suite", level: 95 },
-    { name: "Final Cut Pro", level: 85 },
-    { name: "React", level: 80 },
-    { name: "Next.js", level: 75 },
-  ]
-
+export default function Skills({ skills, onEdit }: SkillsProps) {
   return (
     <section className="mb-4">
       <div className="d-flex justify-content-between align-items-center">
@@ -28,4 +21,3 @@ export default function Skills({ onEdit }: SkillsProps) {
     </section>
   )
 }
-

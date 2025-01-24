@@ -1,21 +1,15 @@
+interface EducationItem {
+  degree: string
+  school: string
+  year: string
+}
+
 interface EducationProps {
+  education: EducationItem[]
   onEdit: () => void
 }
 
-export default function Education({ onEdit }: EducationProps) {
-  const education = [
-    {
-      degree: "Bachelor of Fine Arts in Graphic Design",
-      school: "University of Arts",
-      year: "2015",
-    },
-    {
-      degree: "Certificate in Web Development",
-      school: "Tech Institute",
-      year: "2016",
-    },
-  ]
-
+export default function Education({ education, onEdit }: EducationProps) {
   return (
     <section className="mb-4">
       <div className="d-flex justify-content-between align-items-center">
@@ -35,4 +29,3 @@ export default function Education({ onEdit }: EducationProps) {
     </section>
   )
 }
-
