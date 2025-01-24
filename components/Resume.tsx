@@ -119,11 +119,11 @@ export default function Resume() {
           education={education}
           onEdit={() => handleEdit("education")} 
         />
+        <AnimatedSkillBars skills={skills} />
         <Skills 
           skills={skills}
           onEdit={() => handleEdit("skills")} 
         />
-        <AnimatedSkillBars skills={skills} />
         <Portfolio />
         <SocialLinks />
 
