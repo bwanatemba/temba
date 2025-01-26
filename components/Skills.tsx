@@ -1,7 +1,5 @@
-interface Skill {
-  name: string
-  level: number
-}
+import { Skill } from './Skills'
+import AnimatedSkillBars from './AnimatedSkillBars'
 
 interface SkillsProps {
   skills: Skill[]
