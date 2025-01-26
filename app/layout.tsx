@@ -1,7 +1,7 @@
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import BootstrapClient from "@/components/BootstrapClient"
 
 export default function RootLayout({
   children,
@@ -18,6 +18,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <BootstrapClient />
         </ThemeProvider>
       </body>
     </html>
